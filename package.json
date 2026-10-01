@@ -1,0 +1,21 @@
+{
+  "name": "todo-test1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev public",
+    "deploy": "wrangler pages deploy public",
+    "typecheck": "tsc --noEmit",
+    "db:create": "turso db create todo-db",
+    "db:migrate": "turso db shell todo-db < migrations/0001_create_todos.sql"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.15.15",
+    "hono": "^4.7.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261001.1",
+    "typescript": "^5.8.2",
+    "wrangler": "^4.7.0"
+  }
+}
